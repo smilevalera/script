@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .gg{
+            width: 10vw;
+            height: 10vw;
+            background-color: rgb(6, 6, 187);
+        
+        }
+
+        .color_green{
+            background-color: green;
+        }
+        .color_red{
+            background-color: rgb(231, 8, 8);
+        }
+
+        .block1{
+            width: 15vw;
+            height: 15vw;
+            background-color: rgb(0, 245, 12);
+        }
+        .block2{
+            width: 10vw;
+            height: 10vw;
+            background-color: rgb(6, 6, 187);
+        }
+        .block3{
+            width: 5vw;
+            height: 5vw;
+            background-color: rgb(231, 157, 18);
+        }
+    </style>
+</head>
+<body>
+     <div class ="block1" id= "block1">
+        <div class ="block2" id= "block2">
+            <div class ="block3" id= "block3">
+
+    </div>
+        </div>
+            </div>
+    
+    
+    <div class = "gg" id = "bb"></div>
+
+    <script>
+         let gg = document.querySelector('.gg'); 
+           gg.addEventListener('click', function(){ 
+            gg.classList.add('color_red'); 
+            gg.classList.remove('color_green'); 
+        }); 
+        gg.addEventListener('contextmenu', function(){ 
+            event.preventDefault();
+            gg.classList.remove('color_red'); 
+            gg.classList.add('color_green'); 
+        }); 
+
+       
+        let block1 = document.querySelector('.gg'); 
+           gg.addEventListener('click', function(){ 
+            gg.classList.add('color_red'); 
+        event.stopPropagation();
+    }
+
+    block1.addEventListener('click', blockAction);
+    block2.addEventListener('click', blockAction);
+    block3.addEventListener('click', blockAction);
+
+
+
+    </script>
+</body>
+</html>

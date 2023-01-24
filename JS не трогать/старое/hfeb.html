@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box
+            ;
+        }
+        div{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            border: 1px solid red;
+            padding:2px;
+        }
+        .block1{
+            width: 15vw;
+            height: 15vw;
+            background-color: rgb(0, 245, 12);
+        }
+        .block2{
+            width: 10vw;
+            height: 10vw;
+            background-color: rgb(6, 6, 187);
+        }
+        .block3{
+            width: 5vw;
+            height: 5vw;
+            background-color: rgb(231, 157, 18);
+        }
+        .color_red{
+            background-color: rgb(231, 8, 8);
+        }
+    </style>
+</head>
+<body>
+
+<div class = "container">
+    <div class ="block1" id= "block1">
+        <div class ="block2" id= "block2">
+            <div class ="block3" id= "block3">
+
+    </div>
+        </div>
+            </div>
+    
+    
+</div>
+
+<script>
+    let block1 = document.querySelector('.block1');
+    let block2 = document.querySelector('.block2');
+    let block3 = document.querySelector('.block3');
+
+    function blockAction(){
+        event.stopPropagation();
+        /* if(event.target != event.currentTarget) return; */
+        console.log(`Click on the block ${event.target.id}`)
+        event.target.classList.toggle('color_red');
+        console.log(event.target);
+        console.log(event.currentTarget)
+    }
+
+    /* function blockAction2(){
+        if(event.target != event.currentTarget) return;
+        console.log('Click on the block 2')
+        block2.classList.toggle('color_red');
+        console.log(event.target);
+        console.log(event.currentTarget)
+    }
+
+    function blockAction3(){
+        if(event.target != event.currentTarget) return;
+        console.log('Click on the block 3')
+        block3.classList.toggle('color_red');
+        console.log(event.target);
+        console.log(event.currentTarget)
+    } */
+
+    block1.addEventListener('click', blockAction);
+    block2.addEventListener('click', blockAction);
+    block3.addEventListener('click', blockAction);
+
+    block1.addEventListener('click', function(){
+        event.preventDefault();
+        event.target.style.width = '20vw';
+    });
+
+</script>
+</body>
+</html>

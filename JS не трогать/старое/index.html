@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            height: 1200px;
+        }
+        *{
+            box-sizing: border-box;
+            margin: 0;
+        }
+        div{
+            width:300px;
+            height: 200px;
+            border: 2px solid black;
+            border-radius: 50%;
+            position:absolute;
+           
+            
+
+
+
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+
+    </div>
+    
+
+    <script>
+        let el = document.querySelector('div')
+
+
+        let isDrag= false;
+        let offsetX;
+        let offsetY;
+
+        el.addEventListener('mousedown', function(e){
+            isDrag = true;
+            offsetX = e.pageX - parseInt(getComputedStyle(el).left)
+            offsetY = e.pageY - parseInt(getComputedStyle(el).top)
+        });
+
+        document.addEventListener('mouseup', ()=> {isDrag = false});
+        document.addEventListener('mousemove',function(e){
+
+            if(isDrag){
+                el.style.left = `calc(${e.pageX}px - ${offsetX}px)`;
+                el.style.top = `calc(${e.pageY}px - ${offsetY}px)`;
+                 
+            }
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+        console.log('ширина и отступы ' + el.offsetWidth)
+        console.log('высота и отступы ' + el.offsetHeight)
+
+        console.log('ширина ' + el.clientHeight)
+        console.log('ширина ' + el.clientWidth)
+
+        console.log('ширина border ' + getComputedStyle(el).borderWidth) *//* для всех значений *
+      /*   console.log( '=' + document.documentElement.scrollHeight);
+
+
+        console.log( el.getBoundingClientRect().x)
+        console.log( el.getBoundingClientRect().y) */ 
+       
+     /*    let ul = document.createElement('ul');
+        document.body.prepend(ul)
+
+        for(let i = 0; i<5; i++){
+
+            let li = document.createElement('li');
+            li.innerText = i+1;
+        ul.append(li)
+
+        } */
+
+        
+    </script>
+
+
+</body>
+</html>
